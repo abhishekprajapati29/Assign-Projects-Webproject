@@ -1,0 +1,54 @@
+.card2 {
+  margin: 35px;
+  height: 141px;
+  border-radius: 16px;
+  box-shadow: rgb(33, 203, 243) 0px 4px 20px 0px,
+    rgba(244, 67, 54, 0.4) 0px 7px 10px -5px;
+  background: skyblue;
+}
+
+.card1 {
+  padding: 23px;
+  margin: 7px 27px 7px 15px;
+  border-radius: 12px;
+  background: aliceblue;
+  box-shadow: #1976d2 0px 4px 20px 0px, rgba(244, 67, 54, 0.4) 0px 7px 10px -5px;
+}
+.card21 {
+  margin: 10px;
+  border-radius: 16px;
+  box-shadow: rgb(33, 203, 243) 0px 4px 20px 0px,
+    rgba(244, 67, 54, 0.4) 0px 7px 10px -5px;
+  background: skyblue;
+}
+
+.card11 {
+  padding: 14px;
+  margin: 7px 27px 7px 15px;
+  border-radius: 12px;
+  background: aliceblue;
+  box-shadow: #1976d2 0px 4px 20px 0px, rgba(244, 67, 54, 0.4) 0px 7px 10px -5px;
+}
+.chip {
+  margin: 10px;
+  background: lightskyblue;
+}
+
+.ck-editor__editable {
+  min-height: 450px;
+}
+.add {
+  padding: 23px;
+  margin: 14px 27px;
+  border-radius: 12px;
+  background: aliceblue;
+  box-shadow: #1976d2 0px 4px 20px 0px, rgba(244, 67, 54, 0.4) 0px 7px 10px -5px;
+}
+
+.text {
+  float: right;
+  font-size: xx-large;
+  font-weight: 800;
+  font-family: cursive;
+  margin: 30px 0px;
+}

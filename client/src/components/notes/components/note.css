@@ -1,0 +1,23 @@
+.note1 {
+  flex: 1 1 auto;
+  height: 100%;
+  display: flex;
+  z-index: 2;
+  max-width: 100%;
+  min-width: 0;
+  flex-direction: row;
+  background-color: #f7f7f7;
+}
+.note2 {
+  flex: 1 1 auto;
+  display: flex;
+  width: 25%;
+  z-index: 9999;
+  flex-direction: column;
+}
+
+.note3 {
+  width: 100%;
+  flex-wrap: wrap;
+  display: flex;
+}

@@ -1,0 +1,70 @@
+.heart-checkbox {
+  box-sizing: border-box;
+  width: 12px;
+  height: 12px;
+
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+
+  background-color: rgb(223, 213, 213);
+
+  cursor: pointer;
+  box-shadow: 0 0 50px rgba(0, 0, 0, 0.3);
+
+  transform: rotate(135deg);
+  transition: all 0.3s;
+}
+
+.heart-checkbox::before {
+  content: "";
+
+  display: block;
+  position: relative;
+  right: 6px;
+
+  width: 12px;
+  height: 12px;
+
+  margin: 0;
+  padding: 0;
+  outline: 20px;
+  border-radius: 50%;
+
+  background-color: rgb(223, 213, 213);
+
+  transition: all 0.3s;
+}
+
+.heart-checkbox::after {
+  content: "";
+
+  display: block;
+  position: relative;
+  bottom: 6px;
+
+  width: 12px;
+  height: 12px;
+
+  margin: 0;
+  padding: 0;
+  outline: 2px;
+  border-radius: 50%;
+
+  background-color: rgb(223, 213, 213);
+
+  transition: all 0.3s;
+}
+
+.heart-checkbox.checked {
+  background-color: red;
+}
+
+.heart-checkbox.checked::before {
+  background-color: red;
+}
+
+.heart-checkbox.checked::after {
+  background-color: red;
+}

@@ -1,0 +1,46 @@
+from django.shortcuts import render
+from rest_framework.viewsets import ModelViewSet
+from rest_framework import viewsets
+from .serializer import TodoSerializer, TodoChipSerializer
+from .models import todo, TodoChip
+from .permissions import IsOwnerOrReadOnly
+from rest_framework.permissions import IsAuthenticated
+from django_filters.rest_framework import DjangoFilterBackend
+from .backend import IsOwnerFilterBackend
+from rest_framework import filters
+from rest_framework import mixins
+from rest_framework import status
+from rest_framework.response import Response
+# Create your views here.
+
+
+class todoViewset(ModelViewSet):
+    serializer_class = TodoSerializer
+    queryset = todo.objects.all().order_by('-id')
+    filter_backends = (IsOwnerFilterBackend,filters.SearchFilter,)
+    permission_classes = (IsOwnerOrReadOnly, IsAuthenticated,)
+    search_fields = ['title', 'description', 'timestamp', 'completed']
+
+    def perform_create(self, serializer):
+        serializer.save(user=self.request.user)
+
+
+class TodoChipViewSet(mixins.CreateModelMixin, mixins.ListModelMixin, viewsets.GenericViewSet):
+    serializer_class = TodoChipSerializer
+    queryset = TodoChip.objects.all()
+    search_fields = ('chips','todochip')
+
+    def create(self, request, *args, **kwargs):
+        """
+        #checks if post request data is an array initializes serializer with many=True
+        else executes default CreateModelMixin.create function 
+        """
+        is_many = isinstance(request.data, list)
+        if not is_many:
+            return super(TodoChipViewSet, self).create(request, *args, **kwargs)
+        else:
+            serializer = self.get_serializer(data=request.data, many=True)
+            serializer.is_valid(raise_exception=True)
+            self.perform_create(serializer)
+            headers = self.get_success_headers(serializer.data)
+            return Response(serializer.data, status=status.HTTP_201_CREATED, headers=headers)

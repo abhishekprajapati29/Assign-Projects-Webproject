@@ -1,0 +1,60 @@
+.message-list-container {
+  padding: 10px;
+  padding-bottom: 73px;
+  height: auto;
+  overflow-x: auto;
+}
+
+.message-list-container1 {
+  padding: 10px;
+  padding-bottom: 73px;
+  overflow-y: scroll;
+  height: 540px;
+  overflow-x: auto;
+}
+
+.scrollbar {
+  position: relative;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.headerstyle {
+  background: black;
+  color: aliceblue;
+  text-align-last: center;
+  text-transform: capitalize;
+}
+.messenger {
+  display: grid;
+  width: 100%;
+  height: 93vh;
+  background: #eeeef1;
+}
+
+.container {
+  padding: 10px;
+}
+
+.scrollbar {
+  position: relative;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.sidebar {
+  background: white;
+  grid-row-start: 1;
+  grid-row-end: span 3;
+}
+
+.content {
+  background: white;
+  grid-row-start: 1;
+  grid-row-end: span 3;
+}
+
+.footer {
+  grid-column-start: 2;
+  background: white;
+}
